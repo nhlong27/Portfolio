@@ -5,16 +5,19 @@ import Header from "./common/Header";
 import Footer from "./common/Footer";
 import { useMediaQueries } from "src/hooks/useMediaQueries";
 import About from "./common/About";
+import Skills from "./common/Skills";
+import Contacts from "./common/Contacts";
+import Projects from "./common/Projects";
 
 const App = () => {
   const { isXs } = useMediaQueries();
   return (
-    <div className="bg-gradient-to-t via-green-100 to-green-100 from-transparent min-h-dynamic-screen  w-screen z-0">
+    <div id='about' className="bg-gradient-to-t via-green-100 to-green-100 from-transparent min-h-dynamic-screen  w-screen z-0">
       <div className="relative flex mx-auto flex-col items-center justify-start max-w-[1920px] min-h-dynamic-screen min-w-[300px] w-full z-0">
-        <div className="sticky top-0 w-full z-30 h-auto xs:h-[4rem] lg:h-[5rem] bg-green-100 opacity-70 hover:opacity-100 transition-full duration-500 shadow-lg">
+        <div className="sticky top-0 w-full z-30 h-auto xs:h-[4rem] lg:h-[5rem] bg-white opacity-70 hover:opacity-100 transition-full duration-500 shadow-lg">
           <Header />
         </div>
-        <div className="grow w-full z-10 relative min-h-screen">
+        <div  className="grow w-full z-10 relative min-h-screen">
           {!isXs && (
             <img
               src={background_mobile}
@@ -27,9 +30,9 @@ const App = () => {
             />
           )}
           <About />
-          <div className="w-11/12">
-            dfd
-          </div>
+          <Skills />
+          <Projects />
+          <Contacts />
         </div>
         {isXs && (
           <img
