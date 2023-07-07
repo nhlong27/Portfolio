@@ -4,7 +4,7 @@ import {BsLinkedin} from 'react-icons/bs'
 
 const About = () => {
   return (
-    <div className='mt-[15rem] md:mt-0 h-[45rem] flex justify-center items-start'>
+    <div className='mt-[5rem] md:mt-0 h-[45rem] flex justify-center items-start'>
       <div className='md:w-3/4 w-11/12 h-5/6 flex flex-col justify-center items-center text-stone-900 font-sans'>
         <h1 className='border-l-4 border-green-500 pl-8 md:border-none md:pl-0 text-[3.2rem] font-semibold tracking-wide pb-4'>Nguyễn Hoàng Long</h1>
         <h2 className='text-3xl pb-4'>Front-end Developer</h2>
