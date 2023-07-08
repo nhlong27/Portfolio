@@ -1,3 +1,4 @@
+import ContactForm from '@components/common/ContactForm';
 import React from 'react'
 
 const Contacts = () => {
@@ -34,7 +35,8 @@ const Contacts = () => {
           </div>
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
             <div className="relative rounded-lg bg-white p-8 shadow-lg sm:p-12">
-              <form>
+              <form method='post' action='https://formspree.io/f/mdorogll' onSubmit={(e)=>{e.preventDefault(); 
+              console.log(e)}}>
                 <div className="mb-6">
                   <input
                     type="text"
@@ -45,6 +47,7 @@ const Contacts = () => {
                 <div className="mb-6">
                   <input
                     type="email"
+                    name='email'
                     placeholder="Your Email"
                     className="text-body-color focus:border-primary w-full rounded border border-[f0f0f0] py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                   />

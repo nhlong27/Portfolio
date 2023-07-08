@@ -2,7 +2,7 @@ import React from 'react'
 
 const Skills = () => {
   return (
-    <div id="skills" className='h-auto w-full'>Skills</div>
+    <section id="skills" className='h-auto w-full'>Skills</section>
   )
 }
 

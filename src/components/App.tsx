@@ -1,13 +1,15 @@
-import background_desktop from "public/assets/backgrounds/desktop.png";
-import background_mobile from "public/assets/backgrounds/desktop.webp";
-import Header from "./common/Header";
-import Footer from "./common/Footer";
-import About from "./common/About";
-import Skills from "./common/Skills";
-import Contacts from "./common/Contacts";
-import Projects from "./common/Projects";
+import Header from "./Header";
+import Footer from "./Footer";
+import About from "./sections/About";
+import Skills from "./sections/Skills";
+import Contacts from "./sections/Contacts";
+import Projects from "./sections/Projects";
+import Hero from "./Hero";
+import React from "react";
 
 const App = () => {
+  const [shouldDropDownDisplay, setShouldDropDownDisplay] =
+    React.useState(false);
   return (
     <div
       id="about"
@@ -15,23 +17,22 @@ const App = () => {
     >
       <div className="relative flex mx-auto flex-col items-center justify-start max-w-[1920px] min-h-dynamic-screen min-w-[300px] w-full z-0">
         <div className="sticky top-0 w-full z-30 h-auto xs:h-[4rem] lg:h-[5rem] bg-white opacity-70 hover:opacity-100 transition-full duration-500 shadow-lg">
-          <Header />
+          <Header
+            setShouldDropDownDisplay={setShouldDropDownDisplay}
+            shouldDropDownDisplay={shouldDropDownDisplay}
+          />
         </div>
-        <div className="grow w-full z-10 relative min-h-screen">
+        <main className="grow w-full z-10 relative min-h-screen">
           <About />
           <Skills />
           <Projects />
           <Contacts />
-        </div>
-        <picture className="w-full h-full">
-          <source media="(max-width: 768px)" srcSet={background_mobile} />
-          <img
-            className={`absolute top-0 mx-auto z-0 w-full brightness-110 opacity-30 h-[50rem] object-cover`}
-            src={background_desktop}
-            alt="logo"
-          />
-        </picture>
-        <Footer />
+        </main>
+        <Hero />
+        <Footer
+          shouldDropDownDisplay={shouldDropDownDisplay}
+          setShouldDropDownDisplay={setShouldDropDownDisplay}
+        />
       </div>
     </div>
   );

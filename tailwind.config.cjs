@@ -10,6 +10,13 @@ module.exports = {
         '4k': '2560px',
         xs: '500px',
       },
+			colors: {
+        "primary": "#15803d",
+        "secondary": "#22c55e",
+        "tertiary": "#bef264",
+        "warning": "#ef4444",
+        "danger": "#dc2626",
+			},
 		},
 	},
 	plugins: [],
