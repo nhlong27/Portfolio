@@ -1,6 +1,8 @@
 import React from "react";
 import skills from "public/assets/backgrounds/about_me.png";
 import { Text } from "@components/common/Text";
+import { logos } from "src/constants/urls";
+import SkillLogo from "@components/common/SkillLogo";
 
 const Skills = () => {
   return (
@@ -22,6 +24,20 @@ const Skills = () => {
           <Text variant="XL/bold/black" className="text-primary/50 mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
             SKILLS
           </Text>
+          <div className="flex group flex-wrap gap-x-8 gap-y-12 h-auto w-full">
+            <SkillLogo logo={logos.html}>HTML</SkillLogo>
+            <SkillLogo logo={logos.css}>CSS</SkillLogo>
+            <SkillLogo logo={logos.javascript}>Javascript</SkillLogo>
+            <SkillLogo logo={logos.typescript}>Typescript</SkillLogo>
+            <SkillLogo logo={logos.react}>React</SkillLogo>
+            <SkillLogo logo={logos.nextjs}>Nextjs</SkillLogo>
+            <SkillLogo logo={logos.tailwind}>Tailwind</SkillLogo>
+            <SkillLogo logo={logos.vite}>Vite</SkillLogo>
+            <SkillLogo logo={logos.redux_toolkit}>Redux </SkillLogo>
+            <SkillLogo logo={logos.nodejs}>Nodejs</SkillLogo>
+            <SkillLogo logo={logos.express}>Express</SkillLogo>
+            <SkillLogo logo={logos.graphql}>Graphql</SkillLogo>
+          </div>
         </div>
       </div>
       <div className="container w-full md:w-3/4 max-w-[1000px] mx-auto"></div>
