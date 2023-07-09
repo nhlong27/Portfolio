@@ -3,6 +3,7 @@ import React from "react";
 import { AiOutlineGithub } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
 import * as Scroll from "react-scroll";
+import { urls } from "src/constants/urls";
 let ScrollLink = Scroll.Link;
 
 const About = () => {
@@ -32,21 +33,21 @@ const About = () => {
         </ScrollLink>
         <div className="py-4 flex gap-8 items-center justify-center">
           <a
-            href=""
+            href={urls.github}
             target="_blank"
             className="opacity-60 hover:shadow-xl rounded-full hover:opacity-100"
           >
             <AiOutlineGithub size={50} />
           </a>
           <a
-            href=""
+            href={urls.linkedin}
             target="_blank"
             className="opacity-60 hover:shadow-xl hover:opacity-100 "
           >
             <BsLinkedin size={40} />
           </a>
           <a
-            href=""
+            href={urls.resume}
             target="_blank"
             className="opacity-60 hover:shadow-xl hover:opacity-100 px-6 py-2 text-white grid place-items-center leading-4 bg-stone-900 rounded-sm tracking-wider shadow-lg h-[2.5rem]"
           >

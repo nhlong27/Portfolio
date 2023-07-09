@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({
       >
         <MenuItem
           href="about"
-          className="tracking-wider"
+          className="tracking-wider "
           setShouldDropDownDisplay={setShouldDropDownDisplay}
         >
           <svg
@@ -60,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({
           </svg>
           <Text
             variant="lg/bold/neutral"
-            className="hover:text-primary flex w-full"
+            className="hover:text-primary flex w-full md:justify-center"
           >
             About me
           </Text>
@@ -85,7 +85,7 @@ const Header: React.FC<HeaderProps> = ({
               clipRule="evenodd"
             ></path>
           </svg>
-          <Text variant="lg/bold/neutral"             className="hover:text-primary flex w-full">
+          <Text variant="lg/bold/neutral"             className="hover:text-primary flex w-full md:justify-center">
             Skills
           </Text>
         </MenuItem>
@@ -109,7 +109,7 @@ const Header: React.FC<HeaderProps> = ({
               clipRule="evenodd"
             ></path>
           </svg>
-          <Text variant="lg/bold/neutral"             className="hover:text-primary flex w-full"
+          <Text variant="lg/bold/neutral"             className="hover:text-primary flex w-full md:justify-center"
 >
             Projects
           </Text>
@@ -136,7 +136,7 @@ const Header: React.FC<HeaderProps> = ({
           </svg>
           <Text
             variant="lg/bold/neutral"
-            className="hover:text-primary flex w-full"
+            className="hover:text-primary flex w-full md:justify-center"
           >
             Contacts
           </Text>
