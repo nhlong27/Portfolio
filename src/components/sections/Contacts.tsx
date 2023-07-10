@@ -1,8 +1,8 @@
 import { Text } from "@components/common/Text";
 import React from "react";
-import {BsLinkedin} from "react-icons/bs";
-import {MdEmail} from 'react-icons/md'
-import {FaPhoneSquareAlt} from 'react-icons/fa'
+// import {BsLinkedin} from "react-icons/bs";
+// import {MdEmail} from 'react-icons/md'
+// import {FaPhoneSquareAlt} from 'react-icons/fa'
 import { urls } from "src/constants/urls";
 const Contacts = () => {
   const [isPhoneCopied, setIsPhoneCopied] = React.useState(false);
@@ -45,7 +45,7 @@ const Contacts = () => {
                     className="flex gap-3 flex-col"
                   >
                     <div className="flex gap-4 items-center">
-                      <BsLinkedin size={30} />
+                      {/* <BsLinkedin size={30} /> */}
                       <Text variant="xl/bold/black">LinkedIn</Text>
                     </div>
                     <Text
@@ -68,7 +68,7 @@ const Contacts = () => {
                     className="flex gap-3 flex-col cursor-pointer relative"
                   >
                     <div className="flex gap-4 items-center">
-                      <FaPhoneSquareAlt size={32} />
+                      {/* <FaPhoneSquareAlt size={32} /> */}
                       <Text variant="xl/bold/black">Phone number</Text>
                     </div>
                     <Text
@@ -99,7 +99,7 @@ const Contacts = () => {
                     className="flex gap-3 flex-col cursor-pointer relative"
                   >
                     <div className="flex gap-4 items-center">
-                      <MdEmail size={35} />
+                      {/* <MdEmail size={35} /> */}
                       <Text variant="xl/bold/black">Email address</Text>
                     </div>
                     <Text

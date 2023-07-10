@@ -1,8 +1,8 @@
 import { Text } from "@components/common/Text";
 import React from "react";
-import {AiOutlineGithub} from "react-icons/ai";
+// import {AiOutlineGithub} from "react-icons/ai";
+// import {BsLinkedin} from "react-icons/bs";
 
-import {BsLinkedin} from "react-icons/bs";
 import * as Scroll from "react-scroll";
 import { urls } from "src/constants/urls";
 let ScrollLink = Scroll.Link;
@@ -38,14 +38,14 @@ const About = () => {
             target="_blank"
             className="opacity-100 hover:opacity-70 hover:shadow-xl rounded-full "
           >
-            <AiOutlineGithub size={50} />
-        </a>
+            {/* <AiOutlineGithub size={50} /> */}
+          </a>
           <a
             href={urls.linkedin}
             target="_blank"
             className="opacity-100 hover:opacity-70 hover:shadow-xl  "
           >
-            <BsLinkedin size={40} />
+            {/* <BsLinkedin size={40} /> */}
           </a>
           <a
             href={urls.resume}
