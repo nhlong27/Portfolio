@@ -1,5 +1,4 @@
 import React from "react";
-import { logos } from "src/constants/urls";
 import { Text } from "./Text";
 
 const SkillLogo = ({ logo, children, href }) => {

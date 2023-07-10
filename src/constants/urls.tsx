@@ -1,3 +1,15 @@
+import react from 'public/assets/logos/react.svg';
+import nextjs from 'public/assets/logos/next.svg';
+import tailwind from 'public/assets/logos/tailwind.svg';
+import typescript from 'public/assets/logos/typescript.svg';
+import javascript from 'public/assets/logos/javascript.svg';
+import html from 'public/assets/logos/html.svg';
+import css from 'public/assets/logos/css.svg';
+import graphql from 'public/assets/logos/graphql.svg';
+import redux_toolkit from 'public/assets/logos/redux_toolkit.svg';
+import vite from 'public/assets/logos/vite.svg';
+import nodejs from 'public/assets/logos/nodejs.svg';
+import express from 'public/assets/logos/express.svg';
 
 export const urls = {
   linkedin: 'https://www.linkedin.com/in/long-nguyen-95517b250/',
@@ -6,16 +18,16 @@ export const urls = {
 }
 
 export const logos = {
-  react: '/public/assets/logos/react.svg',
-  nextjs: '/public/assets/logos/next.svg',
-  tailwind: '/public/assets/logos/tailwind.svg',
-  typescript: '/public/assets/logos/typescript.svg',
-  javascript: '/public/assets/logos/javascript.svg',
-  html: '/public/assets/logos/html.svg',
-  css: '/public/assets/logos/css.svg',
-  graphql: '/public/assets/logos/graphql.svg',
-  redux_toolkit: '/public/assets/logos/redux_toolkit.svg',
-  vite: '/public/assets/logos/vite.svg',
-  nodejs: '/public/assets/logos/nodejs.svg',
-  express: '/public/assets/logos/express.svg',
-}
+  react: react,
+  nextjs: nextjs,
+  tailwind: tailwind,
+  typescript: typescript,
+  javascript: javascript,
+  html: html,
+  css: css,
+  graphql: graphql,
+  redux_toolkit: redux_toolkit,
+  vite: vite,
+  nodejs: nodejs,
+  express: express,
+};
