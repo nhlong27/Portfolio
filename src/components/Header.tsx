@@ -1,5 +1,6 @@
 import React from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import gi from "react-icons/gi";
+const {GiHamburgerMenu} = gi
 
 import { Text } from "./common/Text";
 import MenuItem from "./common/MenuItem";

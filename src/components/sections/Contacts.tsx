@@ -1,9 +1,11 @@
-import ContactForm from "@components/common/ContactForm";
 import { Text } from "@components/common/Text";
 import React from "react";
-import { BsLinkedin } from "react-icons/bs";
-import {MdEmail} from 'react-icons/md'
-import {FaPhoneSquareAlt} from 'react-icons/fa'
+import bs from "react-icons/bs";
+const {BsLinkedin} = bs
+import md from 'react-icons/md'
+const {MdEmail} = md
+import fa from 'react-icons/fa'
+const {FaPhoneSquareAlt} = fa
 import { urls } from "src/constants/urls";
 const Contacts = () => {
   const [isPhoneCopied, setIsPhoneCopied] = React.useState(false);

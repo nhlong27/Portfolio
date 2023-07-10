@@ -1,7 +1,9 @@
 import { Text } from "@components/common/Text";
 import React from "react";
-import { AiOutlineGithub } from "react-icons/ai";
-import { BsLinkedin } from "react-icons/bs";
+import ai from "react-icons/ai";
+const {AiOutlineGithub} = ai
+import bs from "react-icons/bs";
+const {BsLinkedin} = bs
 import * as Scroll from "react-scroll";
 import { urls } from "src/constants/urls";
 let ScrollLink = Scroll.Link;
