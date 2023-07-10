@@ -16,7 +16,7 @@ function useParallax(value: MotionValue<number>, distance: number) {
 const Hero = () => {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 300);
+  const y = useParallax(scrollYProgress, 50);
   return (
     <>
     <picture className="w-full h-full">
@@ -27,13 +27,13 @@ const Hero = () => {
         alt="logo"
       />
     </picture>
-    <motion.div style={{y}} className="w-full h-full">
+    {/* <motion.div style={{y}} className="w-full h-full"> */}
       <img
         className={`absolute bottom-0 mx-auto z-0 w-full brightness-110 opacity-30 h-[50rem] object-cover`}
         src={footer}
         alt="logo"
       />
-    </motion.div>
+    {/* </motion.div> */}
     </>
   );
 };

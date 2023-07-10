@@ -13,10 +13,10 @@ const Footer: React.FC<FooterProps> = ({
   setShouldDropDownDisplay,
 }) => {
   return (
-    <footer className="w-full min-h-[18rem] bg-tertiary/30 flex flex-col justify-center items-center z-10">
+    <footer className="w-full min-h-[18rem] bg-transparent flex flex-col justify-center items-center z-10">
       <div className="my-auto mt-0 h-auto w-full md:w-11/12 max-w-[1920px] min-w-[300px] flex justify-center items-center flex-col gap-8 pt-16">
         <div className="flex justify-evenly w-2/5 min-w-[300px]">
-          <a href={urls.linkedin} target="_blank">
+          <a href={urls.linkedin} target="_blank" className="hover:opacity-70">
             <svg
               width="40"
               height="40"
@@ -33,7 +33,7 @@ const Footer: React.FC<FooterProps> = ({
               ></path>
             </svg>
           </a>
-          <a href={urls.github} target="_blank">
+          <a href={urls.github} target="_blank" className="hover:opacity-70">
             <svg
               width="40"
               height="40"
@@ -54,7 +54,7 @@ const Footer: React.FC<FooterProps> = ({
           <a
             href={urls.resume}
             target="_blank"
-            className="px-6 py-2 text-white grid place-items-center leading-4 bg-stone-900 rounded-sm tracking-wider h-[2.5rem] cursor-pointer"
+            className="px-6 py-2 text-white grid place-items-center leading-4 bg-stone-900 rounded-sm tracking-wider h-[2.5rem] cursor-pointer hover:opacity-70"
           >
             Resume
           </a>
@@ -66,7 +66,7 @@ const Footer: React.FC<FooterProps> = ({
           >
             <Text
               variant="lg/bold/neutral"
-              className="font-mono tracking-widest"
+              className="font-mono tracking-widest hover:opacity-70"
             >
               About me
             </Text>
@@ -77,7 +77,7 @@ const Footer: React.FC<FooterProps> = ({
           >
             <Text
               variant="lg/bold/neutral"
-              className="font-mono tracking-widest"
+              className="font-mono tracking-widest hover:opacity-70"
             >
               Skills
             </Text>
@@ -88,7 +88,7 @@ const Footer: React.FC<FooterProps> = ({
           >
             <Text
               variant="lg/bold/neutral"
-              className="font-mono tracking-widest"
+              className="font-mono tracking-widest hover:opacity-70"
             >
               Projects
             </Text>
@@ -99,7 +99,7 @@ const Footer: React.FC<FooterProps> = ({
           >
             <Text
               variant="lg/bold/neutral"
-              className="font-mono tracking-widest"
+              className="font-mono tracking-widest hover:opacity-70"
             >
               Contacts
             </Text>

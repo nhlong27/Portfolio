@@ -124,16 +124,13 @@ const Contacts = () => {
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
             <div className="relative rounded-lg bg-white p-8 shadow-lg sm:p-12">
               <form
-                method="post"
+                method="POST"
                 action="https://formspree.io/f/mdorogll"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  console.log(e);
-                }}
               >
                 <div className="mb-6">
                   <input
                     type="text"
+                    name='name'
                     placeholder="Your Name"
                     className="text-body-color focus:border-primary w-full rounded border border-[f0f0f0] py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                   />
@@ -149,6 +146,7 @@ const Contacts = () => {
                 <div className="mb-6">
                   <input
                     type="text"
+                    name='phone'
                     placeholder="Your Phone"
                     className="text-body-color focus:border-primary w-full rounded border border-[f0f0f0] py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                   />
@@ -156,6 +154,7 @@ const Contacts = () => {
                 <div className="mb-6">
                   <textarea
                     rows={6}
+                    name='message'
                     placeholder="Your Message"
                     className="text-body-color focus:border-primary w-full resize-none rounded border border-[f0f0f0] py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                   ></textarea>

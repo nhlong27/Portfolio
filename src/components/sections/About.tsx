@@ -35,21 +35,21 @@ const About = () => {
           <a
             href={urls.github}
             target="_blank"
-            className="opacity-60 hover:shadow-xl rounded-full hover:opacity-100"
+            className="opacity-100 hover:opacity-70 hover:shadow-xl rounded-full "
           >
             <AiOutlineGithub size={50} />
-          </a>
+        </a>
           <a
             href={urls.linkedin}
             target="_blank"
-            className="opacity-60 hover:shadow-xl hover:opacity-100 "
+            className="opacity-100 hover:opacity-70 hover:shadow-xl  "
           >
             <BsLinkedin size={40} />
           </a>
           <a
             href={urls.resume}
             target="_blank"
-            className="opacity-60 hover:shadow-xl hover:opacity-100 px-6 py-2 text-white grid place-items-center leading-4 bg-stone-900 rounded-sm tracking-wider shadow-lg h-[2.5rem]"
+            className="opacity-100 hover:opacity-70 hover:shadow-xl  px-6 py-2 text-white grid place-items-center leading-4 bg-stone-900 rounded-sm tracking-wider shadow-lg h-[2.5rem]"
           >
             Resume
           </a>

@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({
         <GiHamburgerMenu size={25} />
       </button>
       <div
-        className={`flex w-2/5 pl-6 md:pl-0 absolute md:static md:max-h-full md:h-full bg-white z-20 flex-col h-[12rem] justify-center items-center md:flex-row visible text-xl md:text-[1.2rem] text-stone-900 overflow-hidden top-[4.3rem] right-0  md:shadow-none md:w-1/2 rounded-lg transition-full duration-300 md:divide-none md:opacity-100 ${
+        className={`flex w-2/5 min-w-[10rem] pl-6 md:pl-0 absolute md:static md:max-h-full md:h-full bg-white z-20 flex-col h-[12rem] justify-center items-center md:flex-row visible text-xl md:text-[1.2rem] text-stone-900 overflow-hidden top-[4.3rem] right-0  md:shadow-none md:w-1/2 rounded-lg transition-full duration-300 md:divide-none md:opacity-100 ${
           shouldDropDownDisplay
             ? "max-h-[12rem] opacity-100 shadow-lg"
             : "max-h-0 opacity-0"
