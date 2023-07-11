@@ -20,7 +20,7 @@ const Skills = () => {
           />
         </picture>
         <div className="col-span-1 md:col-span-3 row-span-3 md:row-span-1 skew-y-6 my-16 px-8">
-          <Text variant="XL/bold/black" className="text-primary/50 mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+          <Text variant="XL/bold/black" className="mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px] border-b-2 border-primary/30">
             SKILLS
           </Text>
           <div className="flex group justify-center items-baseline flex-wrap gap-x-8 gap-y-12">

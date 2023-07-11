@@ -25,23 +25,36 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="-mt-[10rem] md:mt-[5rem] mb-[10rem] relative grid grid-rows-3 bg-transparent py-16 px-0 md:p-16 gap-8 z-0"
+      className="-mt-[5rem] md:mt-[5rem] mb-[10rem] relative grid grid-rows-3 bg-transparent py-16 px-0  gap-8 z-0 mx-8"
     >
       <motion.div
-        style={{ y, x: x1 }}
-        className="min-h-[20rem] md:h-[25rem] w-full grid grid-rows-5 md:grid-rows-1 md:grid-cols-5 overflow-hidden bg-white shadow-md rounded  "
+        style={{ y }}
+        className="absolute h-auto w-11/12 -top-4 border-b-2 border-primary/30 mx-auto text-right"
       >
-        <div className="row-span-3 md:row-span-2 md:col-span-3 py-4 px-8">
-          <Text
-            variant="XL/bold/black"
-            className="text-primary/50 mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]"
-          >
-            Title
-          </Text>
+        <Text variant="XL/bold/black" className="uppercase tracking-wider text-[32px] font-bold sm:text-[40px] lg:text-[36px] xl:text-[40px]">Projects</Text>
+      </motion.div>
+      <motion.div
+        style={{ y, x: x1 }}
+        className="min-h-[20rem] md:h-auto w-full grid grid-rows-5 md:grid-rows-1 md:grid-cols-5 overflow-hidden bg-white shadow-md rounded  "
+      >
+        <div className="row-span-3 md:row-span-2 md:col-span-3 py-8 px-16">
           <ProjectOne />
         </div>
-        <div className="row-start-1 row-span-2 md:row-span-2 md:col-span-2 overflow-hidden">
+        <div className="row-start-1 row-span-2 md:row-span-2 md:col-span-2 overflow-hidden grid grid-rows-2">
           <Example />
+          <div>
+        <Text variant="xl/bold/black">Technologies Used</Text>
+        <ul>
+          <li>ReactJS</li>
+          <li>Typescript</li>
+          <li>Vite</li>
+          <li>TailwindCSS</li>
+          <li>NodeJS</li>
+          <li>ExpressJS</li>
+          <li>MongoDB</li>
+          <li>Vitest</li>
+        </ul>
+      </div>
         </div>
       </motion.div>
       <motion.div
