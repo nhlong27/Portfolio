@@ -1,14 +1,5 @@
 import React from "react";
-import mobile from "public/assets/backgrounds/mobile.png";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  MotionValue,
-} from "framer-motion";
-import footer from "public/assets/backgrounds/mobile.png";
-import { Example } from "@components/common/Example";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { Text } from "@components/common/Text";
 import ProjectOne from "@components/projects/ProjectOne";
 
@@ -19,76 +10,196 @@ const Projects = () => {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 200);
-  const x1 = useParallax(scrollYProgress, 20);
-  const x2 = useParallax(scrollYProgress, -20);
-  const x3 = useParallax(scrollYProgress, 20);
   return (
     <section
       id="projects"
-      className="-mt-[5rem] md:mt-[5rem] mb-[10rem] relative grid grid-rows-3 bg-transparent py-16 px-0  gap-8 z-0 mx-8"
+      className="-mt-[5rem] md:mt-[2.5rem] mb-[10rem] relative flex flex-col justify-start bg-transparent  px-0 gap-8 z-0 mx-8"
     >
       <motion.div
         style={{ y }}
-        className="absolute h-auto w-11/12 -top-4 border-b-2 border-primary/30 mx-auto text-right"
+        className="absolute h-auto w-11/12 top-12 border-b-2 border-primary/30 mx-auto text-right"
       >
-        <Text variant="XL/bold/black" className="uppercase tracking-wider text-[32px] font-bold sm:text-[40px] lg:text-[36px] xl:text-[40px]">Projects</Text>
+        <Text
+          variant="XL/bold/black"
+          className="uppercase tracking-wider text-[32px] font-bold sm:text-[40px] lg:text-[36px] xl:text-[40px]"
+        >
+          Projects
+        </Text>
       </motion.div>
-      <motion.div
-        style={{ y, x: x1 }}
-        className="min-h-[20rem] md:h-auto w-full grid grid-rows-5 md:grid-rows-1 md:grid-cols-5 overflow-hidden bg-white shadow-md rounded  "
-      >
-        <div className="row-span-3 md:row-span-2 md:col-span-3 py-8 px-16">
-          <ProjectOne />
-        </div>
-        <div className="row-start-1 row-span-2 md:row-span-2 md:col-span-2 overflow-hidden grid grid-rows-2">
-          <Example />
-          <div>
-        <Text variant="xl/bold/black">Technologies Used</Text>
-        <ul>
-          <li>ReactJS</li>
-          <li>Typescript</li>
-          <li>Vite</li>
-          <li>TailwindCSS</li>
-          <li>NodeJS</li>
-          <li>ExpressJS</li>
-          <li>MongoDB</li>
-          <li>Vitest</li>
-        </ul>
-      </div>
-        </div>
-      </motion.div>
-      <motion.div
-        style={{ y, x: x2 }}
-        className="min-h-[20rem] md:h-[25rem] w-full grid grid-rows-5 md:grid-rows-1 md:grid-cols-5 overflow-hidden bg-white shadow-md rounded"
-      >
-        <div className="row-span-2 md:row-span-2 md:col-span-2 overflow-hidden">
-          <Example />
-        </div>
-        <div className="row-span-3 md:row-span-2 md:col-span-3 py-4 px-8">
-          <Text
-            variant="XL/bold/black"
-            className="text-primary/50 mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]"
-          >
-            Title
-          </Text>
-        </div>
-      </motion.div>
-      <motion.div
-        style={{ y, x: x3 }}
-        className="min-h-[20rem] md:h-[25rem] w-full grid grid-rows-5 md:grid-rows-1 md:grid-cols-5 overflow-hidden bg-white shadow-md rounded"
-      >
-        <div className="row-span-3 md:row-span-2 md:col-span-3 py-4 px-8">
-          <Text
-            variant="XL/bold/black"
-            className="text-primary/50 mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]"
-          >
-            Title
-          </Text>
-        </div>
-        <div className="row-start-1 row-span-2 md:row-span-2 md:col-span-2 overflow-hidden">
-          <Example />
-        </div>
-      </motion.div>
+      <ProjectOne
+        title={"Fir Media"}
+        description={
+          <>
+            A nature-inspired movie website. Both frontend and backend are
+            hosted on{" "}
+            <a
+              href="https://render.com/"
+              target="_blank"
+              className="text-secondary hover:underline"
+            >
+              Render
+            </a>{" "}
+            and MongoDB database on{" "}
+            <a
+              href="https://railway.app/"
+              target="_blank"
+              className="text-secondary hover:underline"
+            >
+              Railway
+            </a>
+            .{" "}
+          </>
+        }
+        role={
+          "In this project, I took charge of the complete software development process, overseeing every stage from initiation to completion. This experience highlights my capacity to independently acquire new skills and effectively adapt to emerging technologies, allowing me to expand my knowledge to full-stack development."
+        }
+        difficulties={
+          "The implementation of the backend according to industry best practices and security standards posed the greatest challenge in this project. I had to acquire some proficiency in backend technologies while also adopting a full TypeScript development approach"
+        }
+        solution={
+          "I use Express.js and MongoDB to develop a robust RESTful API and ensure secure storage of JWT tokens for user authentication. As for the frontend, I ventured beyond traditional approaches like Redux and explored state management libraries like Jotai and Zustand. Additionally, I optimized API performance by implementing pagination through the utilization of React Query's infinite query feature. I also attempted to write some unit tests using Vitest with React Testing Library."
+        }
+        features={
+          <ul>
+            <li>Sign in/ Registration</li>
+            <li>Token Authentication with JSON Web Tokens</li>
+            <li>Lazy loading image with infinite scroll</li>
+            <li>Custom swiper</li>
+            <li>Save movies and categorized them</li>
+            <li>Movies saved to history after watched</li>
+            <li>Comment section for each movie</li>
+          </ul>
+        }
+        technologies={
+          <ul>
+            <li>ReactJS</li>
+            <li>Typescript</li>
+            <li>Vite</li>
+            <li>TailwindCSS</li>
+            <li>NodeJS</li>
+            <li>ExpressJS</li>
+            <li>MongoDB</li>
+            <li>Vitest</li>
+          </ul>
+        }
+        x={20}
+      />
+      <ProjectOne
+        title={"Fir Media"}
+        description={
+          <>
+            A nature-inspired movie website. Both frontend and backend are
+            hosted on{" "}
+            <a
+              href="https://render.com/"
+              target="_blank"
+              className="text-secondary hover:underline"
+            >
+              Render
+            </a>{" "}
+            and MongoDB database on{" "}
+            <a
+              href="https://railway.app/"
+              target="_blank"
+              className="text-secondary hover:underline"
+            >
+              Railway
+            </a>
+            .{" "}
+          </>
+        }
+        role={
+          "In this project, I took charge of the complete software development process, overseeing every stage from initiation to completion. This experience highlights my capacity to independently acquire new skills and effectively adapt to emerging technologies, allowing me to expand my knowledge to full-stack development."
+        }
+        difficulties={
+          "The implementation of the backend according to industry best practices and security standards posed the greatest challenge in this project. I had to acquire some proficiency in backend technologies while also adopting a full TypeScript development approach"
+        }
+        solution={
+          "I use Express.js and MongoDB to develop a robust RESTful API and ensure secure storage of JWT tokens for user authentication. As for the frontend, I ventured beyond traditional approaches like Redux and explored state management libraries like Jotai and Zustand. Additionally, I optimized API performance by implementing pagination through the utilization of React Query's infinite query feature. I also attempted to write some unit tests using Vitest with React Testing Library."
+        }
+        features={
+          <ul>
+            <li>Sign in/ Registration</li>
+            <li>Token Authentication with JSON Web Tokens</li>
+            <li>Lazy loading image with infinite scroll</li>
+            <li>Custom swiper</li>
+            <li>Save movies and categorized them</li>
+            <li>Movies saved to history after watched</li>
+            <li>Comment section for each movie</li>
+          </ul>
+        }
+        technologies={
+          <ul>
+            <li>ReactJS</li>
+            <li>Typescript</li>
+            <li>Vite</li>
+            <li>TailwindCSS</li>
+            <li>NodeJS</li>
+            <li>ExpressJS</li>
+            <li>MongoDB</li>
+            <li>Vitest</li>
+          </ul>
+        }
+        x={-20}
+      />
+      <ProjectOne
+        title={"Fir Media"}
+        description={
+          <>
+            A nature-inspired movie website. Both frontend and backend are
+            hosted on{" "}
+            <a
+              href="https://render.com/"
+              target="_blank"
+              className="text-secondary hover:underline"
+            >
+              Render
+            </a>{" "}
+            and MongoDB database on{" "}
+            <a
+              href="https://railway.app/"
+              target="_blank"
+              className="text-secondary hover:underline"
+            >
+              Railway
+            </a>
+            .{" "}
+          </>
+        }
+        role={
+          "In this project, I took charge of the complete software development process, overseeing every stage from initiation to completion. This experience highlights my capacity to independently acquire new skills and effectively adapt to emerging technologies, allowing me to expand my knowledge to full-stack development."
+        }
+        difficulties={
+          "The implementation of the backend according to industry best practices and security standards posed the greatest challenge in this project. I had to acquire some proficiency in backend technologies while also adopting a full TypeScript development approach"
+        }
+        solution={
+          "I use Express.js and MongoDB to develop a robust RESTful API and ensure secure storage of JWT tokens for user authentication. As for the frontend, I ventured beyond traditional approaches like Redux and explored state management libraries like Jotai and Zustand. Additionally, I optimized API performance by implementing pagination through the utilization of React Query's infinite query feature. I also attempted to write some unit tests using Vitest with React Testing Library."
+        }
+        features={
+          <ul>
+            <li>Sign in/ Registration</li>
+            <li>Token Authentication with JSON Web Tokens</li>
+            <li>Lazy loading image with infinite scroll</li>
+            <li>Custom swiper</li>
+            <li>Save movies and categorized them</li>
+            <li>Movies saved to history after watched</li>
+            <li>Comment section for each movie</li>
+          </ul>
+        }
+        technologies={
+          <ul>
+            <li>ReactJS</li>
+            <li>Typescript</li>
+            <li>Vite</li>
+            <li>TailwindCSS</li>
+            <li>NodeJS</li>
+            <li>ExpressJS</li>
+            <li>MongoDB</li>
+            <li>Vitest</li>
+          </ul>
+        }
+        x={20}
+      />
     </section>
   );
 };
