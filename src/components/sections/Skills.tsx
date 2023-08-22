@@ -8,10 +8,10 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="-mt-[15rem] md:h-[40rem] h-[80rem] flex justify-center items-start relative mx-8 overflow-hidden rounded z-10 "
+      className="-mt-[10rem] lg:h-[35rem] h-[70rem] flex justify-center items-start relative sm:mx-8 rounded z-10"
     >
-      <div className="absolute inset-0 w-full h-3/4 md:my-auto my-16 bg-white -z-10 -skew-y-6 overflow-hidden rounded grid md:grid-cols-5 grid-rows-5 md:grid-rows-1 grid-cols-1 shadow-md">
-        <picture className="row-span-2 md:row-span-1 col-span-1 md:col-span-2 overflow-hidden">
+      <div className="absolute inset-0 w-full h-auto lg:my-auto my-16 bg-white -z-10 -skew-y-3 overflow-hidden rounded grid lg:grid-cols-5 grid-rows-5 lg:grid-rows-1 grid-cols-1 shadow-md">
+        <picture className="row-span-2 lg:row-span-1 col-span-1 lg:col-span-2 overflow-hidden">
           <source media="(max-width: 768px)" srcSet={skills} />
           <img
             className={`mx-auto z-0 w-full brightness-110 opacity-70 h-[50rem] object-cover`}
@@ -19,11 +19,11 @@ const Skills = () => {
             alt="skills"
           />
         </picture>
-        <div className="col-span-1 md:col-span-3 row-span-3 md:row-span-1 skew-y-6 my-16 px-8">
+        <div className="col-span-1 lg:col-span-3 row-span-3 lg:row-span-1 skew-y-3 my-auto px-8 xl:px-16">
           <Text variant="XL/bold/black" className="mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px] border-b-2 border-primary/30">
             SKILLS
           </Text>
-          <div className="flex group justify-center items-baseline flex-wrap gap-x-8 gap-y-12">
+          <div className="flex justify-center items-baseline flex-wrap gap-x-8 gap-y-12">
             <SkillLogo href='https://developer.mozilla.org/en-US/docs/Web/HTML' logo={logos.html}>HTML</SkillLogo>
             <SkillLogo href='https://developer.mozilla.org/en-US/docs/Web/CSS' logo={logos.css}>CSS</SkillLogo>
             <SkillLogo href='https://developer.mozilla.org/en-US/docs/Web/JavaScript' logo={logos.javascript}>Javascript</SkillLogo>
@@ -39,7 +39,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-      <div className="container w-full md:w-3/4 max-w-[1000px] mx-auto"></div>
+      <div className="container w-full lg:w-3/4 max-w-[1000px] mx-auto"></div>
     </section>
   );
 };

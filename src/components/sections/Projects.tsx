@@ -5,7 +5,6 @@ import ProjectOne from "@components/projects/ProjectOne";
 import e0 from "public/screenshots/ecommerce-product-preview.png";
 import e1 from "public/screenshots/ecommerce-1.png";
 import e2 from "public/screenshots/ecommerce-2.png";
-import e3 from "public/screenshots/ecommerce-3.png";
 import e4 from "public/screenshots/ecommerce-4.png";
 import e5 from "public/screenshots/ecommerce-5.png";
 import d0 from "public/screenshots/dd-product-preview.png";
@@ -35,7 +34,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="-mt-[5rem] md:mt-[2.5rem] mb-[10rem] relative flex flex-col justify-start bg-transparent w-5/6 mx-auto px-0 gap-8 z-0"
+      className="mt-[5rem] lg:mt-[10rem] mb-[5rem] relative flex flex-col justify-start bg-transparent w-full md:w-5/6 mx-auto px-0 gap-8 z-0"
     >
       <motion.div
         style={{ y }}
@@ -49,6 +48,8 @@ const Projects = () => {
         </Text>
       </motion.div>
       <ProjectOne
+        demo_link='https://ecommerce-nhlong.vercel.app/'
+        repo_link='https://github.com/nhlong27/ecommerce'
         galleries={galleries.ecommerce}
         title={"Epicola"}
         description={<>An e-commerce website for beverages.</>}
@@ -62,7 +63,7 @@ const Projects = () => {
           "To maintain data consistency and provide real-time updates, I intend to employ a separate service that consumes the data from Kafka and seamlessly updates the MongoDB database. This way, the backend remains robust and always reflects the latest information, ensuring a smooth experience for users and streamlined operations for the ecommerce platform.."
         }
         features={
-          <ul className="ml-8">
+          <ul className="ml-8 text-lg">
             <li className="list-disc">
               User signs up/ signs in with credentials / signs in with Google
               provider
@@ -87,7 +88,7 @@ const Projects = () => {
           </ul>
         }
         technologies={
-          <ul className="ml-8">
+          <ul className="ml-8 text-lg">
             <li className="list-disc">
               Client: Nextjs/Typescript with TailwindCSS, Redux Toolkit
             </li>
@@ -105,6 +106,8 @@ const Projects = () => {
         x={20}
       />
       <ProjectOne
+        demo_link='https://dengue-defense.vercel.app'
+        repo_link='https://github.com/nhlong27/dengue-defense'
         galleries={galleries.dd}
         title={"Dengue Defense"}
         description={
@@ -120,7 +123,7 @@ const Projects = () => {
           "My exploration of TRPC and type-safe APIs has also equipped me with a solid grasp of efficient communication protocols. I've also attempted session-based authentication, enhancing my knowledge of security measures."
         }
         features={
-          <ul className="ml-8">
+          <ul className="ml-8 text-lg">
             <li className="list-disc">
               User signs up/ signs in with credentials / signs in with Google
               provider
@@ -141,7 +144,7 @@ const Projects = () => {
           </ul>
         }
         technologies={
-          <ul className="ml-8">
+          <ul className="ml-8 text-lg">
             <li className="list-disc">
               Client: Nextjs/Typescript with TailwindCSS (component libraries -
               shadcn, recharts), Jotai
@@ -156,6 +159,8 @@ const Projects = () => {
         x={-20}
       />
       <ProjectOne
+        demo_link='https://firmedia.site'
+        repo_link='https://github.com/nhlong27/movieSite'
         galleries={galleries.movie}
         title={"Fir Media"}
         description={<>A nature-inspired movie website.</>}
@@ -169,7 +174,7 @@ const Projects = () => {
           "I use Express.js and MongoDB to develop a robust RESTful API and ensure secure storage of JWT tokens for user authentication. I optimized API performance by implementing pagination through the utilization of React Query's infinite query feature. I also attempted to write some unit tests using Vitest with React Testing Library."
         }
         features={
-          <ul className="ml-8">
+          <ul className="ml-8 text-lg">
             <li className="list-disc">
               User signs up/ signs in with credentials
             </li>
@@ -199,7 +204,7 @@ const Projects = () => {
           </ul>
         }
         technologies={
-          <ul className="ml-8">
+          <ul className="ml-8 text-lg">
             <li className="list-disc">
               Client: React/Typescript with Vite, TailwindCSS, Jotai, Zustand
             </li>

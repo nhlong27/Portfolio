@@ -13,8 +13,11 @@ const About = () => {
         >
           Nguyễn Hoàng Long
         </Text>
-        <Text variant="xl/normal/black" className="text-3xl pb-4">
+        <Text variant="xl/normal/black" className="text-3xl bg-green-900/40 rounded-lg py-3 px-6 text-green-100 mb-4">
           Software Engineer
+        </Text>
+        <Text variant='xl/semibold/black' className="text-center text-slate-500">
+        I'm a software engineer passionate about full-stack development. Proficient in both front-end and back-end technologies and dedicated to creating seamless user experiences and contributing to software innovation.
         </Text>
         <ScrollLink
           activeClass="active"
@@ -74,7 +77,7 @@ const About = () => {
           <a
             href={urls.resume}
             target="_blank"
-            className="opacity-100 hover:opacity-70 hover:shadow-xl  px-6 py-2 text-white grid place-items-center leading-4 bg-stone-900 rounded-sm tracking-wider shadow-lg h-[2.5rem]"
+            className="opacity-100 hover:opacity-70 hover:shadow-xl  px-6 py-2 text-white grid place-items-center leading-4 bg-stone-900 tracking-wider shadow-lg h-[2.5rem] rounded"
           >
             Resume
           </a>

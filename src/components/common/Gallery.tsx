@@ -14,18 +14,18 @@ export default function Gallery(props) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="w-full h-full flex flex-col justify-start items-center">
+    <div className="hidden w-full h-full lg:flex flex-col justify-start items-center">
       <Swiper
         loop={true}
         spaceBetween={10}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="h-auto w-full object-center mx-auto"
+        className="w-full object-center mx-auto rounded-lg overflow-hidden max-h-72 2xl:max-h-96"
       >
         {props.galleries?.map((image, i) => (
-          <SwiperSlide key={i}>
-            <img src={image} />
+          <SwiperSlide className="" key={i}>
+            <img src={image} className="object-fill" />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -37,10 +37,10 @@ export default function Gallery(props) {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="w-full flex h-[13rem] overflow-hidden"
+        className="w-full flex max-h-36 2xl:max-h-52 "
       >
         {props.galleries.map((image, i) => (
-          <SwiperSlide key={i} className="border">
+          <SwiperSlide key={i} className="border rounded-lg overflow-hidden">
             <img src={image} />
           </SwiperSlide>
         ))}

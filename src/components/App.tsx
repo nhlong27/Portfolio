@@ -37,7 +37,7 @@ const App = () => {
           />
         </div>
         <main
-          className="grow w-11/12 z-10 relative min-h-screen"
+          className="grow w-full sm:w-11/12 z-10 relative min-h-screen"
         >
           <About />
           <Skills />

@@ -20,10 +20,10 @@ const Contacts = () => {
   return (
     <section
       id="contacts"
-      className="relative py-20 lg:py-[120px] rounded-sm mt-8 z-10"
+      className="relative py-20 lg:py-[120px]  mt-8 z-10"
     >
       <div className="absolute inset-0 w-full h-1/2 skew-y-3 bg-white -z-10"></div>
-      <div className="absolute inset-0 w-full h-3/4 mt-auto bg-white -z-10 shadow-md"></div>
+      <div className="absolute inset-0 w-full h-3/4 mt-auto bg-white -z-10 shadow-md rounded-b-xl"></div>
       <div className="container w-full md:w-3/4 max-w-[1000px] mx-auto">
         <div className="-mx-4 flex flex-wrap lg:justify-between">
           <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
@@ -63,7 +63,7 @@ const Contacts = () => {
                       variant="md/normal/primary"
                       className="hover:underline transition-full duration-200   overflow-hidden whitespace-pre-wrap"
                     >
-                      https://www.linkedin.com/in/long-nguyen-95517b250/
+                      https://www.linkedin.com/in/nhlong2706/
                     </Text>
                   </a>
                 </div>
@@ -73,7 +73,7 @@ const Contacts = () => {
                   {/* @ts-ignore */}
                   <div
                     onClick={() => {
-                      navigator.clipboard.writeText("(+84) 097 189 04 98");
+                      navigator.clipboard.writeText("(+84) 097 189 0498");
                       setIsPhoneCopied(true);
                     }}
                     className="flex gap-3 flex-col cursor-pointer relative"

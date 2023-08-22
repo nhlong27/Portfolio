@@ -10,11 +10,11 @@ import redux_toolkit from 'public/assets/logos/redux_toolkit.svg';
 import vite from 'public/assets/logos/vite.svg';
 import nodejs from 'public/assets/logos/nodejs.svg';
 import express from 'public/assets/logos/express.svg';
-
+import resume from 'public/resume-original.pdf'
 export const urls = {
-  linkedin: 'https://www.linkedin.com/in/long-nguyen-95517b250/',
+  linkedin: 'https://www.linkedin.com/in/nhlong2706/',
   github: 'https://github.com/nhlong27',
-  resume: ''
+  resume: resume
 }
 
 export const logos = {

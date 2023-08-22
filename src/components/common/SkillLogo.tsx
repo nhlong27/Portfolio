@@ -3,23 +3,25 @@ import { Text } from "./Text";
 
 const SkillLogo = ({ logo, children, href }) => {
   return (
-    <a
-      href={href}
-      target="_blank"
-      className="flex flex-col justify-center items-center gap-4 relative w-1/5 max-w-[4.5rem]"
-    >
-      <img
-        src={logo}
-        alt={children}
-        className="hover:scale-125 transition-all duration-300 w-full"
-      />
+    <div className="flex flex-col items-center justify-start max-w-[3rem] sm:max-w-xs">
+      <a
+        href={href}
+        target="_blank"
+        className="flex flex-col justify-center items-center gap-4 relative max-w-[4.5rem]"
+      >
+        <img
+          src={logo}
+          alt={children}
+          className="hover:scale-110 transition-all duration-300 w-full"
+        />
+      </a>
       <Text
         variant="md/bold/neutral"
-        className="absolute bottom-0 group-hover:-mb-[2rem] group-hover:max-h-[2rem] w-auto whitespace-nowrap group-hover:opacity-100 max-h-0 overflow-hidden transition-all opacity-0 ease-out duration-300"
+        className="w-auto whitespace-nowrap overflow-hidden"
       >
         {children}
       </Text>
-    </a>
+    </div>
   );
 };
 
