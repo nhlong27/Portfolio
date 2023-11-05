@@ -2,22 +2,61 @@ import { Text } from "@components/common/Text";
 import * as Scroll from "react-scroll";
 import { urls } from "src/constants/urls";
 let ScrollLink = Scroll.Link;
+import axios from "axios";
+import { z } from "zod";
+import React from "react";
+
+const ProfileSummarySchema = z.object({
+  name: z.string(),
+  title: z.string(),
+  summary: z.string(),
+});
+
+type ProfileSummaryType = z.infer<typeof ProfileSummarySchema>;
+
+const fetchProfileSummary = async () => {
+  const response = z
+    .object({
+      data: z.object({
+        attributes: ProfileSummarySchema,
+      }),
+    })
+    .parse(
+      (await axios.get(`${import.meta.env.PUBLIC_STRAPI_SERVER}/api/profile-summary`)).data
+    );
+  return response.data.attributes;
+};
 
 const About = () => {
-  return (
+  const [profileSummary, setProfileSummary] =
+    React.useState<ProfileSummaryType | null>();
+
+  React.useEffect(() => {
+    fetchProfileSummary()
+      .then((response) => setProfileSummary(response))
+      .catch((err) => console.log(err));
+  }, []);
+
+  return profileSummary ? (
     <section className="mt-[5rem] md:mt-0 h-[45rem] flex justify-center items-start">
       <div className="md:w-3/4 w-11/12 h-5/6 flex flex-col justify-center items-center text-stone-900 font-sans">
         <Text
           variant="XL/bold/black"
           className="border-l-4 border-green-500 pl-8 md:border-none md:pl-0 text-[3.2rem] font-semibold tracking-wide pb-4"
         >
-          Nguyễn Hoàng Long
+          {profileSummary.name}
         </Text>
-        <Text variant="xl/normal/black" className="text-3xl bg-green-900/40 rounded-lg py-3 px-6 text-green-100 mb-4">
-          Software Engineer
+        <Text
+          variant="xl/normal/black"
+          className="text-3xl bg-green-900/40 rounded-lg py-3 px-6 text-green-100 mb-4"
+        >
+          {profileSummary.title}
         </Text>
-        <Text variant='xl/semibold/black' className="text-center text-slate-500">
-        I'm a software engineer passionate about full-stack development. Proficient in both front-end and back-end technologies and dedicated to creating seamless user experiences and contributing to software innovation.
+        <Text
+          variant="xl/semibold/black"
+          className="text-center text-slate-500"
+        >
+          {profileSummary.summary}
         </Text>
         <ScrollLink
           activeClass="active"
@@ -84,7 +123,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  );
+  ) : <div>Loading...</div>
 };
 
 export default About;
