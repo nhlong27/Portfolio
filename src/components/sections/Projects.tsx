@@ -1,222 +1,180 @@
-import React from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { Text } from "@components/common/Text";
-import ProjectOne from "@components/projects/ProjectOne";
-import e0 from "public/screenshots/ecommerce-product-preview.png";
-import e1 from "public/screenshots/ecommerce-1.png";
-import e2 from "public/screenshots/ecommerce-2.png";
-import e4 from "public/screenshots/ecommerce-4.png";
-import e5 from "public/screenshots/ecommerce-5.png";
-import d0 from "public/screenshots/dd-product-preview.png";
-import d1 from "public/screenshots/dd-1.png";
-import d2 from "public/screenshots/dd-2.png";
-import d3 from "public/screenshots/dd-3.png";
-import d4 from "public/screenshots/dd-4.png";
-import movie0 from "public/screenshots/movie-product-preview.png";
-import movie1 from "public/screenshots/movie-1.png";
-import movie2 from "public/screenshots/movie-2.png";
-import movie3 from "public/screenshots/movie-3.png";
-import movie4 from "public/screenshots/movie-4.png";
+import Project from "@components/projects/Project";
+import { Skeleton } from "@components/ui/skeleton";
+import axios from "axios";
+import React from "react";
+import { z } from "zod";
 
-const galleries = {
-  ecommerce: [e0, e1, e2, e4, e5],
-  dd: [d0, d1, d2, d3, d4],
-  movie: [movie0, movie1, movie2, movie3, movie4],
+const ProjectSchema = z.object({
+  attributes: z.object({
+    name: z.string(),
+    description: z.string(),
+    goal: z.string(),
+    approach: z.string(),
+    features: z.object({
+      data: z.array(
+        z.object({
+          attributes: z.object({
+            feature: z.string(),
+          }),
+        })
+      ),
+    }),
+    technologies: z.object({
+      data: z.array(
+        z.object({
+          attributes: z.object({
+            technology: z.string(),
+          }),
+        })
+      ),
+    }),
+    links: z.object({
+      data: z.array(
+        z.object({
+          attributes: z.object({
+            link: z.string(),
+          }),
+        })
+      ),
+    }),
+    images: z.object({
+      data: z.array(
+        z.object({
+          id: z.number(),
+        })
+      ),
+    }),
+  }),
+});
+
+type ProjectType = z.infer<typeof ProjectSchema>;
+
+const fetchProjects = async () => {
+  const response = z
+    .object({
+      data: z.array(ProjectSchema),
+    })
+    .parse(
+      (
+        await axios.get(
+          `${import.meta.env.PUBLIC_STRAPI_SERVER}/api/projects?populate=*`
+        )
+      ).data
+    );
+  return response.data;
 };
 
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
 const Projects = () => {
-  const ref = React.useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 200);
+  const [projects, setProjects] = React.useState<ProjectType[] | null>();
+
+  React.useEffect(() => {
+    fetchProjects()
+      .then((response) => setProjects(response))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <section
       id="projects"
-      className="relative z-0 mx-auto mb-[5rem] mt-[5rem] flex w-full flex-col justify-start gap-8 bg-transparent px-0 md:w-5/6 lg:mt-[10rem]"
+      className="relative z-0 mx-auto mb-[5rem] mt-[5rem] flex w-full max-w-[70rem] flex-col items-center justify-center gap-8 px-0"
     >
-      <motion.div
-        style={{ y }}
-        className="absolute top-12 mx-auto h-auto w-11/12 border-b-2 border-primary/30 text-right"
+      <Text
+        variant="xl/bold/foreground"
+        className="ml-8 self-start font-bold uppercase tracking-wider"
       >
-        <Text
-          variant="XL/bold/black"
-          className="text-[32px] font-bold uppercase tracking-wider sm:text-[40px] lg:text-[36px] xl:text-[40px]"
-        >
-          Projects
-        </Text>
-      </motion.div>
-      <ProjectOne
-        demo_link="https://ecommerce-nhlong.vercel.app/"
-        repo_link="https://github.com/nhlong27/ecommerce"
-        galleries={galleries.ecommerce}
-        title={"Epicola"}
-        description={<>An e-commerce website for beverages.</>}
-        role={
-          "At the beginning I was intrigued by the intricacies of ecommerce site architecture, particularly when implemented with a headless CMS approach. My focus lies in crafting personalized solutions, such as building dedicated order and stock management services. I aim to create a self-sustaining ecosystem where payment processing relies on trusted Saas solutions like Stripe's checkout and webhook integration."
-        }
-        difficulties={
-          "Regarding data management, my strategy involves web scraping from websites, a method I find effective, especially for dynamic data sources like those associated with companies like PepsiCo. However, given the volatility of this data, I'm keen on establishing a scheduled cron job that fetches new information and efficiently pushes it into Kafka topics."
-        }
-        solution={
-          "To maintain data consistency and provide real-time updates, I intend to employ a separate service that consumes the data from Kafka and seamlessly updates the MongoDB database. This way, the backend remains robust and always reflects the latest information, ensuring a smooth experience for users and streamlined operations for the ecommerce platform."
-        }
-        features={
-          <ul className="ml-8 text-lg">
-            <li className="list-disc">
-              User signs up/ signs in with credentials / signs in with Google
-              provider
-            </li>
-            <li className="list-disc">
-              User edits profile information User browses product catalogue,
-              searches for product by keyword, filter options (category, brand,
-              price range, sort by best rated, most reviewed)
-            </li>
-            <li className="list-disc">
-              User views product details: images, description, price, in stock,
-              etc.
-            </li>
-            <li className="list-disc">
-              User adds products to cart User checkouts
-            </li>
-            <li className="list-disc">User pays for their order</li>
-            <li className="list-disc">
-              User views order history and payment details
-            </li>
-            <li className="list-disc">User leaves reviews for products</li>
-          </ul>
-        }
-        technologies={
-          <ul className="ml-8 text-lg">
-            <li className="list-disc">
-              Client: Nextjs/Typescript with TailwindCSS, Redux Toolkit
-            </li>
-            <li className="list-disc">
-              Server: JWT-based Next-Auth. Nextjs api routes and GraphQL.
-              prisma/PostgreSQL, mongoose/MongoDB, Redis databses. Kafka pub/sub
-              service using cron job
-            </li>
-            <li className="list-disc">Services: Stripe checkout, webhook</li>
-            <li className="list-disc">
-              Deployment: Vercel, Railway.app, AWS S3
-            </li>
-          </ul>
-        }
-        x={20}
-      />
-      <ProjectOne
-        demo_link="https://dengue-defense.vercel.app"
-        repo_link="https://github.com/nhlong27/dengue-defense"
-        galleries={galleries.dd}
-        title={"Dengue Defense"}
-        description={
-          <>An application website for dengue, integrated with IoT devices</>
-        }
-        role={
-          "Originally an application integrated with IoT devices for awareness and preventive measures, this is the refactored version of my thesis project built on Nextjs. This project encompasses frontend and backend development, designing a user-friendly interface with data visualization components, establishing APIs for IoT device communication, and configuring a database to store and retrieve information. "
-        }
-        difficulties={
-          "This project has deepened my understanding of pub/sub mechanisms and their contextual applications. The implementation of polling mechanisms to interact with Kafka has given me practical experience in data collection strategies, while integrating a time series database for telemetry storage has honed my skills in data management."
-        }
-        solution={
-          "My exploration of TRPC and type-safe APIs has also equipped me with a solid grasp of efficient communication protocols. I've also attempted session-based authentication, enhancing my knowledge of security measures."
-        }
-        features={
-          <ul className="ml-8 text-lg">
-            <li className="list-disc">
-              User signs up/ signs in with credentials / signs in with Google
-              provider
-            </li>
-            <li className="list-disc">
-              User browses available patients, doctors
-            </li>
-            <li className="list-disc">User views past device logs</li>
-            <li className="list-disc">
-              User as DOCTOR creates / removes devices or assigns to patients
-            </li>
-            <li className="list-disc">
-              User views device details: telemetries, assigned user, logs, etc.
-            </li>
-            <li className="list-disc">
-              User as DOCTOR starts devices to collect telemetry
-            </li>
-          </ul>
-        }
-        technologies={
-          <ul className="ml-8 text-lg">
-            <li className="list-disc">
-              Client: Nextjs/Typescript with TailwindCSS (component libraries -
-              shadcn, recharts), Jotai
-            </li>
-            <li className="list-disc">
-              Server: Session-based Next-Auth, TRPC with zod validation,
-              prisma/PostgreSQL + timeseries, Kafka topics
-            </li>
-            <li className="list-disc">Deployment: Vercel, Supabase</li>
-          </ul>
-        }
-        x={-20}
-      />
-      <ProjectOne
-        demo_link="https://firmedia.site"
-        repo_link="https://github.com/nhlong27/movieSite"
-        galleries={galleries.movie}
-        title={"Fir Media"}
-        description={<>A nature-inspired movie website.</>}
-        role={
-          "My interest in building streaming websites led me to design and develop a comprehensive movie website. I gained knowledge about server architecture, CRUD operations using Restful APIs with Express, and authentication through JSON Web Tokens (JWT)."
-        }
-        difficulties={
-          "Leveraging modern technologies like Vite and TypeScript, I streamlined development processes and ensured robust code quality. Exploring state management solutions such as Jotai and Zustand further enriched my skill set. Successfully deploying the movie website on the internet marked a significant achievement at the very beginning of my career."
-        }
-        solution={
-          "I use Express.js and MongoDB to develop a robust RESTful API and ensure secure storage of JWT tokens for user authentication. I optimized API performance by implementing pagination through the utilization of React Query's infinite query feature. I also attempted to write some unit tests using Vitest with React Testing Library."
-        }
-        features={
-          <ul className="ml-8 text-lg">
-            <li className="list-disc">
-              User signs up/ signs in with credentials
-            </li>
-            <li className="list-disc">
-              User edits profile information: Username, email, image, password
-              and may deactivate account
-            </li>
-            <li className="list-disc">
-              User browses recommended (Trending, Up coming, Airing now, Top
-              rated, Most popular) media in Home page
-            </li>
-            <li className="list-disc">
-              User searches for media by: keyword, filter options
-            </li>
-            <li className="list-disc">
-              User views media details: overview, trailers, genres, similar
-              media, etc.
-            </li>
-            <li className="list-disc">
-              User adds media to list based on: Favorite, Is Watching, Plan to
-              Watch, Completed, Dropped.
-            </li>
-            <li className="list-disc">User rates media</li>
-            <li className="list-disc">
-              User comments or removes their comments for a media
-            </li>
-          </ul>
-        }
-        technologies={
-          <ul className="ml-8 text-lg">
-            <li className="list-disc">
-              Client: React/Typescript with Vite, TailwindCSS, Jotai, Zustand
-            </li>
-            <li className="list-disc">
-              Server: JWT-based auth, ExpressJS with Restful API, zod
-              validation, mongoose/MongoDB
-            </li>
-            <li className="list-disc">Deploy: Onrender, Railway.app</li>
-          </ul>
-        }
-        x={20}
-      />
+        Projects
+      </Text>
+      {projects ? (
+        projects
+          .reverse()
+          .map((project, i) => (
+            <Project
+              demo_link={project.attributes.links.data[0].attributes.link}
+              repo_link={project.attributes.links.data[1].attributes.link}
+              imageID={project.attributes.images.data[0].id}
+              name={project.attributes.name}
+              description={project.attributes.description}
+              goal={project.attributes.goal}
+              approach={project.attributes.approach}
+              features={project.attributes.features.data.map(
+                (obj) => obj.attributes.feature
+              )}
+              technologies={project.attributes.technologies.data.map(
+                (obj) => obj.attributes.technology
+              )}
+            />
+          ))
+      ) : (
+        <div className="relative isolate -z-10 overflow-hidden bg-transparent px-6 lg:overflow-visible lg:px-0">
+          <div className="absolute inset-0 -z-10 overflow-hidden">
+            <svg
+              className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)] dark:stroke-gray-600"
+              aria-hidden="true"
+            >
+              <defs>
+                <pattern
+                  id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+                  width={200}
+                  height={200}
+                  x="50%"
+                  y={-1}
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path d="M100 200V.5M.5 .5H200" fill="none" />
+                </pattern>
+              </defs>
+              <svg
+                x="50%"
+                y={-1}
+                className="overflow-visible fill-gray-50 dark:fill-gray-800"
+              >
+                <path
+                  d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+                  strokeWidth={0}
+                />
+              </svg>
+              <rect
+                width="100%"
+                height="100%"
+                strokeWidth={0}
+                fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+              />
+            </svg>
+          </div>
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+            <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+              <div className="lg:pr-4">
+                <div className="lg:max-w-lg">
+                  <Skeleton className="h-4 w-[10rem]" />
+                  <Skeleton className="h-12 w-[20rem]" />
+                  <div className="w-full space-y-3">
+                    <Skeleton className="h-4 w-[20rem]" />
+                    <Skeleton className="h-4 w-[20rem]" />
+                    <Skeleton className="h-4 w-[20rem]" />
+                    <Skeleton className="h-4 w-[20rem]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+              <Skeleton className="h-[48rem] w-[48rem]" />
+            </div>
+            <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+              <div className="lg:pr-4">
+                <div className="text-foreground/90 max-w-xl text-base leading-7 lg:max-w-lg">
+                  <Skeleton className="h-12 w-[10rem]" />
+                  <div className="w-full space-y-3">
+                    <Skeleton className="h-4 w-[20rem]" />
+                    <Skeleton className="h-4 w-[20rem]" />
+                    <Skeleton className="h-4 w-[20rem]" />
+                    <Skeleton className="h-4 w-[20rem]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

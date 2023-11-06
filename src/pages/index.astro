@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import App from "@components/App";
+import App from "@components/layout/App";
 import "../style/global.css";
 ---
 
@@ -27,12 +27,6 @@ import "../style/global.css";
     });
   }
 </script>
-
-<html lang="en">
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
 
 <Layout title="Portfolio | Nguyen Hoang Long">
   <App client:load />

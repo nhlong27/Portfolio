@@ -1,7 +1,6 @@
 //@ts-nocheck
-import { cn } from "../../utils/cn";
+import { cn } from "../../lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
-import * as React from "react";
 import { Balancer } from "react-wrap-balancer";
 
 const textVariants = cva([], {
@@ -20,10 +19,18 @@ const textVariants = cva([], {
       bold: "font-bold",
     },
     color: {
-      primary: "text-primary",
-      secondary: "text-secondary",
-      tertiary: "text-tertiary",
-      danger: "text-danger",
+      foreground: "text-foreground",
+      "primary-foreground": "text-primary-foreground",
+      "primary-container-foreground": "text-primary-container-foreground",
+      "secondary-foreground": "text-secondary-foreground",
+      "secondary-container-foreground": "text-secondary-container-foreground",
+      "tertiary-foreground": "text-tertiary-foreground",
+      "tertiary-container-foreground": "text-tertiary-container-foreground",
+      "destructive-foreground": "text-destructive-foreground",
+      "destructive-container-foreground":
+        "text-destructive-container-foreground",
+      "surface-foreground": "text-surface-foreground",
+      "surface-high-foreground": "text-surface-high-foreground",
       black: "text-black",
       neutral: "text-black/60",
       ghost: "text-gray-400",
@@ -46,7 +53,7 @@ export function Text({ variant, children, className }: TextProps) {
   const [size, weight, color] = (variant as string).split("/") as [
     TextStylesProps["size"],
     TextStylesProps["weight"],
-    TextStylesProps["color"],
+    TextStylesProps["color"]
   ];
   return (
     <div className={cn(textVariants({ size, weight, color, className }))}>

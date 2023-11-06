@@ -1,11 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Poppins:wght@300;500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 20 14.3% 4.1%;
+    --background: #ffffff;
+    --foreground: #1b1c17;
+
+    --primary: #4b6708;
+    --primary-foreground: #ffffff;
+
+    --primary-container: #ccef85;
+    --primary-container-foreground: #141f00;
+
+    --secondary: #5a6148;
+    --secondary-foreground: #ffffff;
+
+    --secondary-container: #dee6c5;
+    --secondary-container-foreground: #171e0a;
+
+    --tertiary: #396660;
+    --tertiary-foreground: #ffffff;
+
+    --tertiary-container: #bcece4;
+    --tertiary-container-foreground: #00201d;
+
+    --destructive: #ba1a1a;
+    --destructive-foreground: #ffffff;
+
+    --destructive-container: #ffdad6;
+    --destructive-container-foreground: #410002;
+
+    --surface: #f0fdf4;
+    --surface-foreground: #16a34a;
+
+    --surface-high: #dcfce7;
+    --surface-high-foreground: #15803d;
 
     --card: 0 0% 100%;
     --card-foreground: 20 14.3% 4.1%;
@@ -13,20 +45,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
 
-    --primary: 24 9.8% 10%;
-    --primary-foreground: 60 9.1% 97.8%;
-
-    --secondary: 60 4.8% 95.9%;
-    --secondary-foreground: 24 9.8% 10%;
-
     --muted: 60 4.8% 95.9%;
     --muted-foreground: 25 5.3% 44.7%;
 
     --accent: 60 4.8% 95.9%;
     --accent-foreground: 24 9.8% 10%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
 
     --border: 20 5.9% 90%;
     --input: 20 5.9% 90%;
@@ -36,8 +59,38 @@
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 60 9.1% 97.8%;
+    --background: #1b1c17;
+    --foreground: #e4e3db;
+
+    --primary: #b0d36c;
+    --primary-foreground: #253600;
+
+    --primary-container: #374e00;
+    --primary-container-foreground: #ccef85;
+
+    --secondary: #c2caab;
+    --secondary-foreground: #2c331d;
+
+    --secondary-container: #424a32;
+    --secondary-container-foreground: #dee6c5;
+
+    --tertiary: #a0d0c8;
+    --tertiary-foreground: #013732;
+
+    --tertiary-container: #204e49;
+    --tertiary-container-foreground: #bcece4;
+
+    --destructive: #ffb4ab;
+    --destructive-foreground: #690005;
+
+    --destructive-container: #93000a;
+    --destructive-container-foreground: #ffdad6;
+
+    --surface: #052e16;
+    --surface-foreground: #4ade80;
+
+    --surface-high: #064e3b;
+    --surface-high-foreground: #86efac;
 
     --card: 20 14.3% 4.1%;
     --card-foreground: 60 9.1% 97.8%;
@@ -45,20 +98,11 @@
     --popover: 20 14.3% 4.1%;
     --popover-foreground: 60 9.1% 97.8%;
 
-    --primary: 60 9.1% 97.8%;
-    --primary-foreground: 24 9.8% 10%;
-
-    --secondary: 12 6.5% 15.1%;
-    --secondary-foreground: 60 9.1% 97.8%;
-
     --muted: 12 6.5% 15.1%;
     --muted-foreground: 24 5.4% 63.9%;
 
     --accent: 12 6.5% 15.1%;
     --accent-foreground: 60 9.1% 97.8%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 60 9.1% 97.8%;
 
     --border: 12 6.5% 15.1%;
     --input: 12 6.5% 15.1%;

@@ -16,23 +16,57 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        xs: "450px"
+      },
+      minHeight: {
+        "dynamic-screen": "100dvh"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
+          container : {
+            DEFAULT: "var(--primary-container)",
+            foreground: "var(--primary-container-foreground)"
+          }
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
+          container : {
+            DEFAULT: "var(--secondary-container)",
+            foreground: "var(--secondary-container-foreground)"
+          }
+        },
+        tertiary: {
+          DEFAULT: "var(--tertiary)",
+          foreground: "var(--tertiary-foreground)",
+          container : {
+            DEFAULT: "var(--tertiary-container)",
+            foreground: "var(--tertiary-container-foreground)"
+          }
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--destructive-foreground)",
+          container : {
+            DEFAULT: "var(--destructive-container)",
+            foreground: "var(--destructive-container-foreground)"
+          }
+        },
+        surface: {
+          DEFAULT: "var(--surface)",
+          foreground: "var(--surface-foreground)",
+          high : {
+            DEFAULT: "var(--surface-high)",
+            foreground: "var(--surface-high-foreground)"
+          }
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",

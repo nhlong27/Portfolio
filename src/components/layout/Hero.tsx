@@ -2,13 +2,7 @@ import React from "react";
 import hero_desktop from "public/assets/backgrounds/desktop.png";
 import hero_mobile from "public/assets/backgrounds/desktop.webp";
 import footer from "public/assets/backgrounds/mobile.png";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  MotionValue,
-} from "framer-motion";
+import { useScroll, useTransform, MotionValue } from "framer-motion";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
@@ -28,11 +22,11 @@ const Hero = () => {
         />
       </picture>
       {/* <motion.div style={{y}} className="w-full h-full"> */}
-      <img
+      {/* <img
         className={`absolute bottom-0 z-0 mx-auto h-[50rem] w-full object-cover opacity-30 brightness-110`}
         src={footer}
         alt="logo"
-      />
+      /> */}
       {/* </motion.div> */}
     </>
   );
