@@ -34,22 +34,22 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="mt-[5rem] lg:mt-[10rem] mb-[5rem] relative flex flex-col justify-start bg-transparent w-full md:w-5/6 mx-auto px-0 gap-8 z-0"
+      className="relative z-0 mx-auto mb-[5rem] mt-[5rem] flex w-full flex-col justify-start gap-8 bg-transparent px-0 md:w-5/6 lg:mt-[10rem]"
     >
       <motion.div
         style={{ y }}
-        className="absolute h-auto w-11/12 top-12 border-b-2 border-primary/30 mx-auto text-right"
+        className="absolute top-12 mx-auto h-auto w-11/12 border-b-2 border-primary/30 text-right"
       >
         <Text
           variant="XL/bold/black"
-          className="uppercase tracking-wider text-[32px] font-bold sm:text-[40px] lg:text-[36px] xl:text-[40px]"
+          className="text-[32px] font-bold uppercase tracking-wider sm:text-[40px] lg:text-[36px] xl:text-[40px]"
         >
           Projects
         </Text>
       </motion.div>
       <ProjectOne
-        demo_link='https://ecommerce-nhlong.vercel.app/'
-        repo_link='https://github.com/nhlong27/ecommerce'
+        demo_link="https://ecommerce-nhlong.vercel.app/"
+        repo_link="https://github.com/nhlong27/ecommerce"
         galleries={galleries.ecommerce}
         title={"Epicola"}
         description={<>An e-commerce website for beverages.</>}
@@ -106,8 +106,8 @@ const Projects = () => {
         x={20}
       />
       <ProjectOne
-        demo_link='https://dengue-defense.vercel.app'
-        repo_link='https://github.com/nhlong27/dengue-defense'
+        demo_link="https://dengue-defense.vercel.app"
+        repo_link="https://github.com/nhlong27/dengue-defense"
         galleries={galleries.dd}
         title={"Dengue Defense"}
         description={
@@ -159,8 +159,8 @@ const Projects = () => {
         x={-20}
       />
       <ProjectOne
-        demo_link='https://firmedia.site'
-        repo_link='https://github.com/nhlong27/movieSite'
+        demo_link="https://firmedia.site"
+        repo_link="https://github.com/nhlong27/movieSite"
         galleries={galleries.movie}
         title={"Fir Media"}
         description={<>A nature-inspired movie website.</>}

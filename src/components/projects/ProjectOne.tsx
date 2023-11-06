@@ -17,25 +17,33 @@ const ProjectOne = (props) => {
 
   return (
     <motion.div
-      className={`w-full flex flex-col justify-start items-center overflow-hidden bg-white shadow-md rounded-xl relative transition-all duration-300 py-8"
-      }`}
+      className={`py-8" } relative flex w-full flex-col items-center justify-start overflow-hidden rounded-xl bg-white shadow-md transition-all
+      duration-300`}
     >
-      <div className="overflow-hidden w-full md:w-11/12 mx-auto relative md:pt-12">
+      <div className="relative mx-auto w-full overflow-hidden md:w-11/12 md:pt-12">
         <Gallery galleries={props.galleries} />
-        <img className="block lg:hidden" src={props.galleries[0]} alt='image' />
+        <img className="block lg:hidden" src={props.galleries[0]} alt="image" />
       </div>
-      <div className="pt-8 pb-16 px-3 sm:px-16 w-full">
-        <div className="flex flex-col sm:flex-row sm:gap-8 gap-3 sm:items-center items-start">
+      <div className="w-full px-3 pb-16 pt-8 sm:px-16">
+        <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-8">
           <Text
             variant="XL/bold/primary"
-            className="font-bold font-serif text-black"
+            className="font-serif font-bold text-black"
           >
             {props.title}
           </Text>
-          <a target="_blank" href={props.demo_link} className="cursor-pointer inline-flex items-center justify-center rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-800 dark:bg-slate-900 dark:text-slate-50 dark:hover:bg-slate-900/70 bg-slate-50 text-slate-900 hover:bg-slate-50/90 h-10 px-4 py-2 text-xl">
+          <a
+            target="_blank"
+            href={props.demo_link}
+            className="inline-flex h-10 cursor-pointer items-center justify-center rounded-md bg-slate-50 px-4 py-2 text-xl font-medium text-slate-900 ring-offset-white transition-colors hover:bg-slate-50/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-900 dark:text-slate-50 dark:ring-offset-slate-950 dark:hover:bg-slate-900/70 dark:focus-visible:ring-slate-800"
+          >
             Demo
           </a>
-          <a target="_blank" href={props.repo_link} className="cursor-pointer inline-flex items-center justify-center rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-800 bg-slate-900 text-slate-50 hover:bg-slate-900/70 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-200 h-10 px-4 py-2 text-xl gap-3">
+          <a
+            target="_blank"
+            href={props.repo_link}
+            className="inline-flex h-10 cursor-pointer items-center justify-center gap-3 rounded-md bg-slate-900 px-4 py-2 text-xl font-medium text-slate-50 ring-offset-white transition-colors hover:bg-slate-900/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-50 dark:text-slate-900 dark:ring-offset-slate-950 dark:hover:bg-slate-200 dark:focus-visible:ring-slate-800"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -57,10 +65,10 @@ const ProjectOne = (props) => {
         <Text variant="xl/normal/ghost" className="my-3 ">
           {props.description}
         </Text>
-        <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-4">
+        <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
           <div className="col-start-1 px-3">
             <div className="my-6 ">
-              <div className="mb-4 flex gap-3 items-center w-full">
+              <div className="mb-4 flex w-full items-center gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -87,7 +95,7 @@ const ProjectOne = (props) => {
               </Text>
             </div>
             <div className="my-6 mb-3">
-              <div className="mb-4 flex gap-3 items-center w-full">
+              <div className="mb-4 flex w-full items-center gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -108,7 +116,7 @@ const ProjectOne = (props) => {
               </div>
               <Text
                 variant="lg/normal/black"
-                className="w-full whitespace-nowrap mb-2"
+                className="mb-2 w-full whitespace-nowrap"
               >
                 {props.difficulties}
               </Text>
@@ -120,9 +128,9 @@ const ProjectOne = (props) => {
               </Text>
             </div>
           </div>
-          <div className="md:col-start-2 col-start-1 px-3 border-l pl-8">
+          <div className="col-start-1 border-l px-3 pl-8 md:col-start-2">
             <div className="my-6">
-              <div className="mb-4 flex gap-3 items-center w-full">
+              <div className="mb-4 flex w-full items-center gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -145,7 +153,7 @@ const ProjectOne = (props) => {
               {props.features}
             </div>
             <div>
-              <div className="mb-4 flex gap-3 items-center w-full">
+              <div className="mb-4 flex w-full items-center gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

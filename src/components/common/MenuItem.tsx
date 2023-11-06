@@ -25,8 +25,8 @@ const MenuItem = ({
       duration={500}
       onClick={() => setShouldDropDownDisplay(false)}
       className={cn(
-        "flex justify-center items-center md:w-[15rem] w-full h-3/4 md:mr-auto text-[1.5rem] font-bold  whitespace-nowrap text-stone-900 md:p-0 cursor-pointer",
-        className
+        "flex h-3/4 w-full cursor-pointer items-center justify-center whitespace-nowrap text-[1.5rem] font-bold  text-stone-900 md:mr-auto md:w-[15rem] md:p-0",
+        className,
       )}
     >
       {children}

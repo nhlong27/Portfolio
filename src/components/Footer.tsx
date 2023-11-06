@@ -13,9 +13,9 @@ const Footer: React.FC<FooterProps> = ({
   setShouldDropDownDisplay,
 }) => {
   return (
-    <footer className="w-full min-h-[18rem] bg-transparent flex flex-col justify-center items-center z-10">
-      <div className="my-auto mt-0 h-auto w-full md:w-11/12 max-w-[1920px] min-w-[300px] flex justify-center items-center flex-col gap-8 pt-16">
-        <div className="flex justify-evenly w-2/5 min-w-[300px]">
+    <footer className="z-10 flex min-h-[18rem] w-full flex-col items-center justify-center bg-transparent">
+      <div className="my-auto mt-0 flex h-auto w-full min-w-[300px] max-w-[1920px] flex-col items-center justify-center gap-8 pt-16 md:w-11/12">
+        <div className="flex w-2/5 min-w-[300px] justify-evenly">
           <a href={urls.linkedin} target="_blank" className="hover:opacity-70">
             <svg
               width="40"
@@ -54,12 +54,12 @@ const Footer: React.FC<FooterProps> = ({
           <a
             href={urls.resume}
             target="_blank"
-            className="px-6 py-2 text-white grid place-items-center leading-4 bg-stone-900 rounded-sm tracking-wider h-[2.5rem] cursor-pointer hover:opacity-70"
+            className="grid h-[2.5rem] cursor-pointer place-items-center rounded-sm bg-stone-900 px-6 py-2 leading-4 tracking-wider text-white hover:opacity-70"
           >
             Resume
           </a>
         </div>
-        <div className="flex justify-evenly flex-col md:flex-row w-3/4 md:w-3/5 max-w-[500px] min-w-[300px]">
+        <div className="flex w-3/4 min-w-[300px] max-w-[500px] flex-col justify-evenly md:w-3/5 md:flex-row">
           <MenuItem
             href="about"
             setShouldDropDownDisplay={setShouldDropDownDisplay}
@@ -106,7 +106,7 @@ const Footer: React.FC<FooterProps> = ({
           </MenuItem>
         </div>
       </div>
-      <div className="w-full text-center pt-3 pb-8">
+      <div className="w-full pb-8 pt-3 text-center">
         <Text variant="md/light/neutral" className="font-mono tracking-widest">
           Copyright @2023; Designed by NHLong
         </Text>

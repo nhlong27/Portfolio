@@ -18,30 +18,27 @@ const Contacts = () => {
   }, [isPhoneCopied, isEmailCopied]);
 
   return (
-    <section
-      id="contacts"
-      className="relative py-20 lg:py-[120px]  mt-8 z-10"
-    >
-      <div className="absolute inset-0 w-full h-1/2 skew-y-3 bg-white -z-10"></div>
-      <div className="absolute inset-0 w-full h-3/4 mt-auto bg-white -z-10 shadow-md rounded-b-xl"></div>
-      <div className="container w-full md:w-3/4 max-w-[1000px] mx-auto">
+    <section id="contacts" className="relative z-10 mt-8  py-20 lg:py-[120px]">
+      <div className="absolute inset-0 -z-10 h-1/2 w-full skew-y-3 bg-white"></div>
+      <div className="absolute inset-0 -z-10 mt-auto h-3/4 w-full rounded-b-xl bg-white shadow-md"></div>
+      <div className="container mx-auto w-full max-w-[1000px] md:w-3/4">
         <div className="-mx-4 flex flex-wrap lg:justify-between">
           <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
-            <div className="mb-12 max-w-[570px] lg:mb-0 px-8">
+            <div className="mb-12 max-w-[570px] px-8 lg:mb-0">
               <Text
                 variant="XL/bold/black"
                 className="text-dark mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]"
               >
                 GET IN TOUCH
               </Text>
-              <div className="mb-8 flex w-full max-w-[370px] mt-16">
+              <div className="mb-8 mt-16 flex w-full max-w-[370px]">
                 <div className="w-full">
                   <a
                     href={urls.linkedin}
                     target="_blank"
-                    className="flex gap-3 flex-col"
+                    className="flex flex-col gap-3"
                   >
-                    <div className="flex gap-4 items-center justify-start">
+                    <div className="flex items-center justify-start gap-4">
                       <svg
                         width="30"
                         height="30"
@@ -61,7 +58,7 @@ const Contacts = () => {
                     </div>
                     <Text
                       variant="md/normal/primary"
-                      className="hover:underline transition-full duration-200   overflow-hidden whitespace-pre-wrap"
+                      className="transition-full overflow-hidden whitespace-pre-wrap   duration-200 hover:underline"
                     >
                       https://www.linkedin.com/in/nhlong2706/
                     </Text>
@@ -76,9 +73,9 @@ const Contacts = () => {
                       navigator.clipboard.writeText("(+84) 097 189 0498");
                       setIsPhoneCopied(true);
                     }}
-                    className="flex gap-3 flex-col cursor-pointer relative"
+                    className="relative flex cursor-pointer flex-col gap-3"
                   >
-                    <div className="flex gap-4 items-center">
+                    <div className="flex items-center gap-4">
                       <svg
                         width="30"
                         height="30"
@@ -97,12 +94,12 @@ const Contacts = () => {
                     </div>
                     <Text
                       variant="lg/normal/primary"
-                      className=" transition-full duration-200 overflow-hidden whitespace-nowrap"
+                      className=" transition-full overflow-hidden whitespace-nowrap duration-200"
                     >
                       (+84) 097 189 04 98
                     </Text>
                     <span
-                      className={`absolute bottom-0 right-0 transition-all  duration-200 ease-out overflow-hidden px-8 py-3  bg-primary/70 w-[5rem] flex justify-center items-center text-white shrink rounded-lg h-[2rem] shadow-md ${
+                      className={`absolute bottom-0 right-0 flex  h-[2rem] w-[5rem] shrink items-center justify-center  overflow-hidden rounded-lg bg-primary/70 px-8 py-3 text-white shadow-md transition-all duration-200 ease-out ${
                         isPhoneCopied ? "opacity-100" : "opacity-0"
                       }`}
                     >
@@ -120,9 +117,9 @@ const Contacts = () => {
                       navigator.clipboard.writeText("(+84) 097 189 04 98");
                       setIsEmailCopied(true);
                     }}
-                    className="flex gap-3 flex-col cursor-pointer relative"
+                    className="relative flex cursor-pointer flex-col gap-3"
                   >
-                    <div className="flex gap-4 items-center">
+                    <div className="flex items-center gap-4">
                       <svg
                         width="25"
                         height="25"
@@ -141,12 +138,12 @@ const Contacts = () => {
                     </div>
                     <Text
                       variant="lg/normal/primary"
-                      className=" transition-full duration-200 overflow-hidden whitespace-nowrap"
+                      className=" transition-full overflow-hidden whitespace-nowrap duration-200"
                     >
                       nhlong2706@gmai.com
                     </Text>
                     <span
-                      className={`absolute bottom-0 right-0 transition-all  duration-200 ease-out overflow-hidden px-8 py-3  bg-primary/70 w-[5rem] flex justify-center items-center text-white shrink rounded-lg h-[2rem] shadow-md ${
+                      className={`absolute bottom-0 right-0 flex  h-[2rem] w-[5rem] shrink items-center justify-center  overflow-hidden rounded-lg bg-primary/70 px-8 py-3 text-white shadow-md transition-all duration-200 ease-out ${
                         isEmailCopied ? "opacity-100" : "opacity-0"
                       }`}
                     >
@@ -165,7 +162,7 @@ const Contacts = () => {
                     type="text"
                     name="name"
                     placeholder="Your Name"
-                    className="text-body-color focus:border-primary w-full rounded border border-[f0f0f0] py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                    className="text-body-color w-full rounded border border-[f0f0f0] px-[14px] py-3 text-base outline-none focus:border-primary focus-visible:shadow-none"
                   />
                 </div>
                 <div className="mb-6">
@@ -173,7 +170,7 @@ const Contacts = () => {
                     type="email"
                     name="email"
                     placeholder="Your Email"
-                    className="text-body-color focus:border-primary w-full rounded border border-[f0f0f0] py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                    className="text-body-color w-full rounded border border-[f0f0f0] px-[14px] py-3 text-base outline-none focus:border-primary focus-visible:shadow-none"
                   />
                 </div>
                 <div className="mb-6">
@@ -181,7 +178,7 @@ const Contacts = () => {
                     type="text"
                     name="phone"
                     placeholder="Your Phone"
-                    className="text-body-color focus:border-primary w-full rounded border border-[f0f0f0] py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                    className="text-body-color w-full rounded border border-[f0f0f0] px-[14px] py-3 text-base outline-none focus:border-primary focus-visible:shadow-none"
                   />
                 </div>
                 <div className="mb-6">
@@ -189,13 +186,13 @@ const Contacts = () => {
                     rows={6}
                     name="message"
                     placeholder="Your Message"
-                    className="text-body-color focus:border-primary w-full resize-none rounded border border-[f0f0f0] py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
+                    className="text-body-color w-full resize-none rounded border border-[f0f0f0] px-[14px] py-3 text-base outline-none focus:border-primary focus-visible:shadow-none"
                   ></textarea>
                 </div>
                 <div>
                   <button
                     type="submit"
-                    className="bg-primary border-primary w-full rounded border p-3 tracking-wider text-white transition hover:bg-opacity-90"
+                    className="w-full rounded border border-primary bg-primary p-3 tracking-wider text-white transition hover:bg-opacity-90"
                   >
                     Send Message
                   </button>

@@ -22,7 +22,11 @@ const fetchProfileSummary = async () => {
       }),
     })
     .parse(
-      (await axios.get(`${import.meta.env.PUBLIC_STRAPI_SERVER}/api/profile-summary`)).data
+      (
+        await axios.get(
+          `${import.meta.env.PUBLIC_STRAPI_SERVER}/api/profile-summary`,
+        )
+      ).data,
     );
   return response.data.attributes;
 };
@@ -38,17 +42,17 @@ const About = () => {
   }, []);
 
   return profileSummary ? (
-    <section className="mt-[5rem] md:mt-0 h-[45rem] flex justify-center items-start">
-      <div className="md:w-3/4 w-11/12 h-5/6 flex flex-col justify-center items-center text-stone-900 font-sans">
+    <section className=" flex h-[45rem] items-start justify-center md:mt-0">
+      <div className="mt-[5rem] flex h-5/6 w-11/12 flex-col items-center justify-center font-sans text-stone-900 md:w-3/4">
         <Text
           variant="XL/bold/black"
-          className="border-l-4 border-green-500 pl-8 md:border-none md:pl-0 text-[3.2rem] font-semibold tracking-wide pb-4"
+          className="border-l-4 border-green-500 pb-4 pl-8 font-vina text-[3.2rem] font-semibold tracking-wide md:border-none md:pl-0"
         >
           {profileSummary.name}
         </Text>
         <Text
           variant="xl/normal/black"
-          className="text-3xl bg-green-900/40 rounded-lg py-3 px-6 text-green-100 mb-4"
+          className="mb-4 rounded-lg bg-green-900/40 px-6 py-3 text-3xl text-green-100"
         >
           {profileSummary.title}
         </Text>
@@ -66,15 +70,15 @@ const About = () => {
           offset={50}
           duration={500}
         >
-          <button className="text-lg py-2 px-6 ring-2 ring-stone-900 rounded-sm my-8 bg-opacity-10 bg-stone-900 font-semibold text-stone-600 hover:bg-opacity-100 hover:text-white transition-full duration-200">
+          <button className=" transition-full my-8 rounded-sm bg-stone-900 bg-opacity-10 px-6 py-2 text-lg font-semibold text-stone-600 ring-2 ring-stone-900 duration-200 hover:bg-opacity-100 hover:text-white">
             View projects
           </button>
         </ScrollLink>
-        <div className="py-4 flex gap-8 items-center justify-center">
+        <div className="flex items-center justify-center gap-8 py-4">
           <a
             href={urls.github}
             target="_blank"
-            className="opacity-100 hover:opacity-70 hover:shadow-xl rounded-full "
+            className="rounded-full opacity-100 hover:opacity-70 hover:shadow-xl "
           >
             <svg
               width="45"
@@ -116,14 +120,16 @@ const About = () => {
           <a
             href={urls.resume}
             target="_blank"
-            className="opacity-100 hover:opacity-70 hover:shadow-xl  px-6 py-2 text-white grid place-items-center leading-4 bg-stone-900 tracking-wider shadow-lg h-[2.5rem] rounded"
+            className="grid h-[2.5rem] place-items-center  rounded bg-stone-900 px-6 py-2 leading-4 tracking-wider text-white opacity-100 shadow-lg hover:opacity-70 hover:shadow-xl"
           >
             Resume
           </a>
         </div>
       </div>
     </section>
-  ) : <div>Loading...</div>
+  ) : (
+    <div>Loading...</div>
+  );
 };
 
 export default About;

@@ -4,11 +4,11 @@ module.exports = {
     // ...
     "plugin:astro/recommended",
   ],
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     tsconfigRootDir: __dirname,
-    sourceType: 'module',
-    ecmaVersion: 'latest'
+    sourceType: "module",
+    ecmaVersion: "latest",
   },
   // ...
   overrides: [
@@ -30,4 +30,4 @@ module.exports = {
     },
     // ...
   ],
-}
+};

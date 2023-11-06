@@ -19,21 +19,21 @@ const Hero = () => {
   const y = useParallax(scrollYProgress, 50);
   return (
     <>
-    <picture className="w-full h-full">
-      <source media="(max-width: 768px)" srcSet={hero_mobile} />
+      <picture className="h-full w-full">
+        <source media="(max-width: 768px)" srcSet={hero_mobile} />
+        <img
+          className={`absolute top-0 z-0 mx-auto h-[50rem] w-full object-cover opacity-30 brightness-110`}
+          src={hero_desktop}
+          alt="logo"
+        />
+      </picture>
+      {/* <motion.div style={{y}} className="w-full h-full"> */}
       <img
-        className={`absolute top-0 mx-auto z-0 w-full brightness-110 opacity-30 h-[50rem] object-cover`}
-        src={hero_desktop}
-        alt="logo"
-      />
-    </picture>
-    {/* <motion.div style={{y}} className="w-full h-full"> */}
-      <img
-        className={`absolute bottom-0 mx-auto z-0 w-full brightness-110 opacity-30 h-[50rem] object-cover`}
+        className={`absolute bottom-0 z-0 mx-auto h-[50rem] w-full object-cover opacity-30 brightness-110`}
         src={footer}
         alt="logo"
       />
-    {/* </motion.div> */}
+      {/* </motion.div> */}
     </>
   );
 };
