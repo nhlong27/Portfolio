@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import About from "../sections/About";
-import Skills from "../sections/Skills";
+import Skills, { fetchImage } from "../sections/Skills";
 import Contacts from "../sections/Contacts";
 import Projects from "../sections/Projects";
 import Hero from "./Hero";

@@ -13,8 +13,8 @@ import "../style/global.css";
       ? "dark"
       : "light";
   };
-  const isDark = getThemePreference() === "dark";
-  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+  // const isDark = getThemePreference() === "dark";
+  // document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
   if (typeof localStorage !== "undefined") {
     const observer = new MutationObserver(() => {

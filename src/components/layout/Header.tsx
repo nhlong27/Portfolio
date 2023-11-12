@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Text } from "../common/Text";
 import MenuItem from "../common/MenuItem";
 import { Button } from "../ui/button";

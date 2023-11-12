@@ -127,29 +127,26 @@ const Project: React.FC<ProjectComponentType> = (props) => {
             <div className=" lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
               <div className="rounded-tr-[50%] border-r-2 border-t-2 border-stone-100 dark:border-stone-800 lg:pr-4">
                 <div className="text-foreground/90 max-w-xl text-base leading-7 lg:max-w-lg">
-                  <h2 className="mt-16 text-xl font-bold tracking-tight text-foreground">
+                  <h2 className="mt-16 text-xl font-bold tracking-tight text-primary">
                     Solving the problem.
                   </h2>
-                  <p className="mt-6 pr-4 text-sm leading-6">{approach}</p>
+                  <p className="mt-6 pr-4 text-sm leading-6 text-primary">
+                    {approach}
+                  </p>
                 </div>
               </div>
             </div>
             <div className="lg:col-span-1 lg:col-start-2 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
               <div className="lg:pr-4">
-                <div className="text-foreground/90 max-w-xl text-base leading-7 lg:max-w-lg">
-                  <h2 className="mt-16 text-xl font-bold tracking-tight text-foreground">
+                <div className="max-w-xl text-base leading-7 text-gray-400 dark:text-gray-500 lg:max-w-lg">
+                  <h2 className="mt-16 text-xl font-bold tracking-tight ">
                     Notable technologies.
                   </h2>
-                  <ul
-                    role="list"
-                    className="text-secondary/90 mt-8 space-y-4 text-sm"
-                  >
+                  <ul role="list" className="mt-8 space-y-4 text-sm">
                     {technologies.map((technology, i) => (
                       <li className="flex gap-x-3" key={i}>
                         <span>
-                          <strong className=" font-light text-foreground">
-                            {technology}
-                          </strong>{" "}
+                          <strong className=" font-light">{technology}</strong>{" "}
                         </span>
                       </li>
                     ))}
